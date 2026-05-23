@@ -1,0 +1,28 @@
+#!/bin/sh
+export PATH=/bin:/sbin:/usr/bin:/usr/sbin
+mount -t devtmpfs devtmpfs /dev 2>/dev/null || mkdir -p /dev
+mount -t proc proc /proc
+mount -t sysfs sysfs /sys
+mkdir -p /dev/pts /run /tmp /root /mnt
+mount -t devpts devpts /dev/pts 2>/dev/null || true
+# Redirect to the actual console (devtmpfs now provides /dev/console)
+exec >/dev/console 2>&1 </dev/console
+hostname Chiux
+cat <<'MSG'
+
+Chiux booted
+MSG
+uname -a
+printf '\nWelcome to Chiux.\n\n'
+if grep -qw 'chiux.autotest=1' /proc/cmdline; then
+  echo '[chiux] autotest mode'
+  echo '[chiux] / contents:'
+  ls /
+  echo '[chiux] busybox:'
+  /bin/busybox | sed -n '1,2p'
+  echo '[chiux] testing sys_print_info:'
+  /root/test_print_info
+  echo '[chiux] powering off'
+  poweroff -f
+fi
+exec setsid cttyhack /bin/sh
