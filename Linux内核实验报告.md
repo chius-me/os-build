@@ -4,6 +4,8 @@
 
 **学生：** Yao Chius
 
+**项目源码：** [https://github.com/chius-dev/chiux](https://github.com/chius-dev/chiux)
+
 **日期：** 2026 年 5 月 23 日
 
 ---
