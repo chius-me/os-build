@@ -1,6 +1,19 @@
-# Chiux
+<div align="center">
 
-一个最小可启动 Linux 系统，用于 Linux 内核编程学习。
+# Chiux (os-build)
+
+一个用于 Linux 内核编程学习的最小可启动 Linux 操作系统与自动化构建框架。
+
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+![Linux](https://img.shields.io/badge/Linux-Kernel%20v7.0-FCC624?logo=linux&logoColor=black)
+![BusyBox](https://img.shields.io/badge/BusyBox-Rootfs-blue)
+![QEMU](https://img.shields.io/badge/Emulator-QEMU%2FKVM-FF6600)
+
+[快速开始](#快速开始) · [目录结构](#目录结构) · [构建产物](#构建产物)
+
+</div>
+
+---
 
 基于 QEMU/KVM + BusyBox 最小根文件系统 + 内嵌 initramfs，单文件可启动内核镜像。
 
@@ -85,3 +98,13 @@ screen -r chiux
 
 - Linux: `https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git` (tag `v7.0`)
 - BusyBox: `https://git.busybox.net/busybox` (commit `fb10ad3`)
+
+---
+
+## 📄 License
+
+Distributed under the [MIT](LICENSE) License.
+
+<div align="center">
+  <sub>Crafted with ❤️ by <a href="https://chius.cc">Chius</a> · Powered by Linux & QEMU</sub>
+</div>
